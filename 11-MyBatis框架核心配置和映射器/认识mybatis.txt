@@ -1,0 +1,4 @@
+mybatis项目：
+搭建maven，mybatis、mysql-connector-java依赖
+配置文件mybatis.xml
+映射文件很多，在配置文件mybatis.xml中注册

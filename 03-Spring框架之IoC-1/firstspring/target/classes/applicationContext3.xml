@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--构造器方式配置属性值 ,Dog dog=new Dog(did,dname)-->
+    <bean id="dog" class="edu.neusoft.demo3.Dog">
+        <constructor-arg name="did" value="10"></constructor-arg>
+        <constructor-arg name="dname" value="大黄"></constructor-arg>
+    </bean>
+
+    <bean id="dog2" class="edu.neusoft.demo3.Dog" lazy-init="true">
+        <constructor-arg index="0" value="20"></constructor-arg>
+        <constructor-arg index="1" value="大黄"></constructor-arg>
+    </bean>
+
+    <!--setter方法配置属性值-->
+    <bean id="dog3" class="edu.neusoft.demo3.Dog">
+        <property name="did" value="30"></property>
+        <property name="dname" value="大黄"></property>
+    </bean>
+
+
+</beans>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--别名-->
+    <typeAliases>
+        <typeAlias type="edu.neusoft.mybatisDemo.model.vo.Person" alias="Person"></typeAlias>
+        <typeAlias type="edu.neusoft.mybatisDemo.model.vo.Student" alias="Student"></typeAlias>
+        <typeAlias type="edu.neusoft.mybatisDemo.model.vo.Emp" alias="Emp"></typeAlias>
+        <typeAlias type="edu.neusoft.mybatisDemo.model.vo.Dept" alias="Dept"></typeAlias>
+    </typeAliases>
+
+    <!--环境参数,default指定具体使用的环境-->
+    <environments default="dev">
+        <environment id="dev">
+            <!--<transactionManager type="MANAGED"/>-->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/ssm?characterEncoding=utf8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+    
+<!--指定使用的mapper.xml文件路径-->
+    <mappers>
+        <mapper resource="PersonMapper.xml"></mapper>
+        <mapper resource="StudentMapper.xml"></mapper>
+        <mapper resource="EmpMapper.xml"></mapper>
+        <mapper resource="DeptMapper.xml"></mapper>
+    </mappers>
+
+</configuration>

@@ -1,0 +1,14 @@
+上节课内容回顾：
+SpringMVC注解：@RequestMapping、@RequestParam、@ModeAttribute
+前后台参数传递
+
+mvc:annotation-driven
+
+本节课内容：
+
+updatePerson(101，'jack'，'123')
+
+问题：
+1.传递参数值传递id，然后根据部件的动态id获取
+2.@ResopenseBody注解，表示返回json数据/void，不返回页面
+3.项目部署到服务器后，js没有同步部署

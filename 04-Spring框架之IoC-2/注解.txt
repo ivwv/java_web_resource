@@ -1,0 +1,12 @@
+Spring框架注解
+@WebServlet
+@Test
+
+创建bean
+管理bean
+属性注入
+
+MVC
+model:  service、dao、vo
+controller:
+view:jsp

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--引用properties配置文件-->
+    <properties resource="sql.properties"></properties>
+    
+    <!--<settings>-->
+        <!--<setting name="" value=""/>-->
+    <!--</settings>-->
+
+    <!--别名-->
+    <typeAliases>
+        <typeAlias type="java.lang.Integer" alias="Integer"></typeAlias>
+        <typeAlias type="java.lang.String" alias="String"></typeAlias>
+        <typeAlias type="edu.neusoft.testmybatis.model.vo.Person" alias="Person"></typeAlias>
+    </typeAliases>
+
+    <!--环境参数,default指定具体使用的环境-->
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+        <environment id="devOracle">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+                <property name="url" value="jdbc:oracle:thin:localhost:1521:orcl"/>
+                <property name="username" value="scott"/>
+                <property name="password" value="tiger"/>
+            </dataSource>
+        </environment>
+    </environments>
+    
+<!--指定使用的mapper.xml文件路径-->
+    <mappers>
+        <!--<mapper class="edu.neusoft.model.dao.AdminsMapper"></mapper>-->
+        <!--<package name="edu.neusoft.model.dao"></package>-->
+        <!--<mapper resource="edu/neusoft/model/dao/AdminsMapper.xml"></mapper>-->
+        <mapper resource="PersonMapper.xml"></mapper>
+    </mappers>
+
+</configuration>

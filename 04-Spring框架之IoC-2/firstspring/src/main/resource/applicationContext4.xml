@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="dog" class="edu.neusoft.demo3.Dog">
+        <property name="did" value="20"></property>
+        <property name="dname" value="大黄"></property>
+    </bean>
+<!--属性值注入时，如果是基本类型，使用value，如果是引用类型（自定义类型），使用ref
+ref表示引用其他已经写好的bean的id-->
+    <bean id="person" class="edu.neusoft.demo3.Person">
+        <property name="pid" value="100"></property>
+        <property name="pname" value="刘德华"></property>
+        <property name="dog" ref="dog"></property>
+        <property name="list">
+            <list>
+                <value>first</value>
+                <value>second</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>one</value>
+                <value>two</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="one" value="first"></entry>
+                <entry key="two" value="second"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <!--控制反转：通过更改配置文件的方式，使运行结果发生改变，把程序的控制权交给配置文件。
+    依赖注入：给属性注入值的时候，需要依赖于其他已经定义好的bean-->
+
+
+</beans>

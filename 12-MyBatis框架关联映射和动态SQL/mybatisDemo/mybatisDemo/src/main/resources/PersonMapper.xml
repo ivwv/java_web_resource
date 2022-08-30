@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.neusoft.mybatisDemo.model.dao.PersonMapper">
+    <!--List<Person> selectAll();-->
+    <select id="selectAll" resultType="Person">
+        select * from person
+    </select>
+
+    <!--查询语句使用select标签，id就是对应接口里面的方法名，resultType是返回值类型，
+    parameterType是参数类型。
+    如果参数是一个Strig/Integer，我们使用#{0}调用；如果参数是一个javaBean，我们使用属性调用#{pname}
+    默认参数和返回值都是只有一个，如果出现多个，请自行封装-->
+    <!--Person selectByPnameAndPwd(Person person);-->
+    <select id="selectByPnameAndPwd" resultType="Person" parameterType="Person">
+        select * from person where pname=#{pname} and pwd=#{pwd}
+    </select>
+
+    <!--void insertPerson(Person person);-->
+    <insert id="insertPerson" parameterType="Person">
+        insert into person values(#{pid},#{pname},#{page},#{pwd})
+    </insert>
+    <!--<update id="" parameterType=""></update>-->
+    <!--<delete id="" parameterType=""></delete>-->
+
+</mapper>

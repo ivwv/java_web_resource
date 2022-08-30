@@ -1,0 +1,44 @@
+Spring
+Test：junit
+IOC
+AOP
+数据库：Mybatis
+Web：SpringMVC
+
+案例：使用maven创建Spring框架
+1.新建工程，选择maven模板
+2.填写maven配置文件pom.xml,依赖spring-context
+3.新建spring框架的配置文件applicationContext.xml
+4.填写配置文件applicationContext.xml
+5.项目编码
+6.测试项目
+
+Spring框架主要学习的是javebean的创建以及管理等。
+
+bean管理
+scope来配置是否是单例
+	默认default/singleton，单例，lazy-init配置加载时机
+		default/false，加载配置文件时创建所有的bean
+		true，第一次使用bean的时候创建bean
+	prototype，非单例
+
+
+类的生命周期
+创建
+初始化
+使用
+销毁
+
+init-method属性，表示初始化时机
+
+属性注入：自动注入（注解）、手动注入
+手动注入：构造器方法、setter方法
+
+基本类型属性的注入
+bean/constructor-arg  name="" value=""
+bean/property name="" value=""
+
+属性的数据类型：基本类型、自定义类型、集合类型list/set/map
+
+
+

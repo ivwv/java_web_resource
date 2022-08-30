@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--构造器方式创建bean-->
+    <!--Dog dog=new Dog()-->
+    <bean id="dog" class="edu.neusoft.demo.Dog"></bean>
+
+    <!--普通工厂方式创建bean-->
+    <!--        DogFactory factory=new DogFactory();
+        Dog dog1=factory.getDog();-->
+    <bean id="factory" class="edu.neusoft.demo.DogFactory"></bean>
+    <bean id="dog1" factory-bean="factory" factory-method="getDog"></bean>
+
+    <!--静态工厂创建bean-->
+    <!--        Dog dog2=DogFactory.getStaticDog();-->
+    <bean id="dog2" class="edu.neusoft.demo.DogFactory" factory-method="getStaticDog"></bean>
+</beans>

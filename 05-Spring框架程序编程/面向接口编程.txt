@@ -1,0 +1,13 @@
+Spring框架----面向接口编程
+
+案例：实现登录（模拟数据库，dao层；jsp使用controller模拟）
+
+1.新建工程，使用maven模板
+2.填写maven配置文件pom.xml,依赖spring-context
+3.新建spring框架配置文件applicationContext.xml，在里面使用注解识别，context:component-scan
+4.项目布局 controller(main虚拟jsp)、model（service、dao、vo，dao层虚拟数据库）
+5.测试运行controller
+
+
+
+

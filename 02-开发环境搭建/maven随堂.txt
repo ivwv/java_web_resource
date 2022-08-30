@@ -1,0 +1,23 @@
+Maven
+
+案例：搭建junit测试环境
+junit：测试单元
+
+1.新建maven工程
+2.添加依赖在pom.xml
+3.系统帮助我们查找jar包和依赖包，并导入项目
+
+DOM
+BOM
+
+Document Object Model
+Browser 
+
+POM
+Project Object Model
+
+当填写好pom.xml配置文件，系统自动到中央资源库查找相应jar包和依赖包，下载到本地资源库
+
+如果项目中，下载jar包失败？
+1.更改pom.xml配置文件中，依赖包的版本号
+2.到本地资源库中删除相应的版本，重新下载

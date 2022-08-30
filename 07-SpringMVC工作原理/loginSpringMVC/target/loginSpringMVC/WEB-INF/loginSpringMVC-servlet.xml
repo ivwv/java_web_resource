@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--Spring框架注解，支持自动扫描
+    SpringMVC框架是Spring框架的一部分，所以可以使用同一个配置文件-->
+    <context:component-scan base-package="edu.neusoft.loginSpringMVC"></context:component-scan>
+
+    <!--SpringMVC框架工作原理：
+    首先，客户端发送请求login.action，
+    拦截器（web.xml里面配置了*.action）对所有的.action文件进行拦截；
+    DispatcherServlet查找HandlerMapping,把拦截到的url进行数据封装，封装成数据对象personAction；
+    DispathcerServlet查找HandlerAdapter，对应到响应的数据对象PersonAction；
+    PersonAction是用户自定义的，需要继承自AbstractController,重写方法handleRequestInternal，该方法进行业务处理，返回ModelAndView对象；
+    DispatcherServlet查找ViewResolver，把ModelAndView对象进行解析，生成的view响应回客户端。-->
+
+    <!--<bean name="handlermapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">-->
+        <!--<property name="mappings">-->
+            <!--<props>-->
+                <!--<prop key="login.action">personAction</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--BeanNameUrlHandlerMapping匹配的url跟数据对象同名-->
+    <!--<bean name="handlermapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>-->
+
+    <!--ViewResolver可以配置多个，使用的时候逐个进行匹配-->
+    <bean name="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+</beans>

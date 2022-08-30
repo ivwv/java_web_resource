@@ -1,0 +1,38 @@
+ResultMap
+
+Spring
+bean 
+	constructor-arg
+	property
+bean调用无参构造方法，
+bean, constructor-arg，调用有参构造方法
+bean ,property，调用无参构造方法，setter方法
+
+resultMap,constructor，调用有参构造方法
+resultMap,id/result，调用无参构造方法和setter方法
+
+映射关系
+
+如果姓名不为空，
+查询姓名
+如果账号名不为空，
+查询账号名
+如果都为空，
+查询所有
+
+if(){}
+
+
+if(){}else if(){}else{}
+
+username,password,insterst,
+
+(username,password,insterst)
+
+
+select * from aaa
+where ddd
+and ddd
+and ddd
+
+

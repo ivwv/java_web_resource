@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.neusoft.ssmDemo.model.dao.WorkerMapper">
+    <!--Worker selectByNameAndPwd(Worker worker);-->
+    <select id="selectByNameAndPwd" parameterType="Worker" resultType="Worker">
+        select * from worker where username=#{username} and password=#{password}
+    </select>
+
+    <!--void insertWorker(Worker worker);-->
+    <insert id="insertWorker" parameterType="Worker">
+         insert into worker(username,password) value(#{username},#{password})
+    </insert>
+
+    <!--List<Worker> selectAll();-->
+    <select id="selectAll" resultType="Worker">
+        select * from worker
+    </select>
+
+    <!--void updateWorker(Worker worker);-->
+    <update id="updateWorker" parameterType="Worker">
+        update worker set username=#{username} , password=#{password} where wid=#{wid}
+    </update>
+    <!--void deleteByWid(Integer wid);-->
+    <delete id="deleteByWid" parameterType="Integer">
+         delete from worker where wid=#{0}
+    </delete>
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.neusoft.mybatisDemo.model.dao.EmpMapper">
+    <resultMap id="EmpResultMap" type="Emp">
+        <id property="empno" column="empno"></id>
+        <result property="ename" column="ename"></result>
+        <result property="job" column="job"></result>
+        <result property="mgr" column="mgr"></result>
+        <result property="hiredate" column="hiredate"></result>
+        <result property="sal" column="sal"></result>
+        <result property="comm" column="comm"></result>
+        <result property="deptno" column="deptno"></result>
+        <association property="dept" javaType="Dept" >
+            <id property="deptno" column="deptno"></id>
+            <result property="dname" column="dname"></result>
+            <result property="loc" column="loc"></result>
+        </association>
+    </resultMap>
+
+    <!--List<Emp> findByDept(Dept dept);-->
+    <!--<select id="findByDept" parameterType="Dept" resultMap="EmpResultMap">-->
+    <select id="findByDept" parameterType="Dept" resultType="Emp">
+        select e.* from emp e,dept d
+        where e.deptno=d.deptno
+        and d.loc=#{loc}
+    </select>
+</mapper>
